@@ -18,7 +18,7 @@ gsap.registerPlugin(EasePack)
 gsap.registerPlugin(SplitText)
 gsap.registerPlugin(Observer)
 
-import { flicker } from '@/app/page'
+import { flicker } from '@/components/Flicker'
 
 export default function(){
 

@@ -10,6 +10,7 @@ import { useGSAP } from "@gsap/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Metrophobic } from "next/font/google";
+import { flicker } from "@/components/Flicker";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrambleTextPlugin)
@@ -25,14 +26,7 @@ export type Project = {
   gallery?: number;
   year?: string;
 }
-export const flicker = (tl: gsap.core.Timeline, ref_id: string, prev: string = '0.4') =>{
-    tl.fromTo(ref_id,{opacity: 0},{opacity: 1,duration: 0.1}, `-=${prev}`)
-    tl.fromTo(ref_id,{opacity: 0},{opacity: 1,duration: 0.05, delay: 0.05}, '<')
-    tl.fromTo(ref_id,{opacity: 0,},{opacity: 1,duration: 0.1, delay: 0.05}, `<`)
-    tl.fromTo(ref_id,{opacity: 0,},{opacity: 1,duration: 0.05, delay: 0.05 }, `<`)
-    tl.fromTo(ref_id,{opacity: 0,},{opacity: 1,duration: 0.1, delay: 0.05}, `<`)
-    tl.fromTo(ref_id,{opacity: 0,},{opacity: 1,duration: 0.05, delay: 0.05}, `<`)
-  }
+
 export default function Home() {
 
   const router = useRouter()
