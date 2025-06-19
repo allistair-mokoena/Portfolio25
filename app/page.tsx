@@ -180,17 +180,32 @@ export default function Home() {
   const handleWipe = () =>{
     const tl = gsap.timeline()
 
-    tl.fromTo(`.${styles.WipeOver}`,{
-      display: 'inline',
-      width: '0vw'
-    },{
-      width: '95vw'
-    })
+    if(mobile.current){
+      tl.fromTo(`.${styles.WipeOver}`,{
+        display: 'inline',
+        width: '0vw'
+      },{
+        width: '95vw'
+      })
 
-    tl.to(`.${styles.WipeOver}`,{
-      width: '0vw',
-      display: 'none'
-    })
+      tl.to(`.${styles.WipeOver}`,{
+        width: '0vw',
+        display: 'none'
+      })
+    }else{
+      tl.fromTo(`.${styles.WipeOver}`,{
+        display: 'inline',
+        width: '0vw'
+      },{
+        width: '25vw'
+      })
+
+      tl.to(`.${styles.WipeOver}`,{
+        width: '0vw',
+        display: 'none'
+      })
+    }
+    
   }
   const handleALSM = ()=>{
     let tl = gsap.timeline()
