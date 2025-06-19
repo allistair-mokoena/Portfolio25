@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import { SplitText } from "gsap/SplitText";
@@ -271,6 +271,8 @@ export default function Home() {
       })
     }
     })
+
+    
   },[gridArr])
   return (
     <div className="main">
@@ -454,7 +456,7 @@ export default function Home() {
             <div className={styles.Pallete} style={{backgroundColor: String(proj?.colors[0])}}></div>
             <div className={styles.Pallete} style={{backgroundColor: String(proj?.colors[1])}}></div>
             <div className={styles.Pallete} style={{backgroundColor: String(proj?.colors[2])}}></div>
-            <div className={styles.Pallete} style={ proj?.colors[0].length > 0  ? {backgroundImage: `linear-gradient(45deg ,${proj?.colors[3].toString()}`} : {backgroundColor: proj?.colors[3]}}></div>
+            <div className={styles.Pallete} style={ proj?.colors[0].length > 0  ? {backgroundImage: `linear-gradient(45deg ,${proj?.colors[3].toString()}`} as CSSProperties : {backgroundColor: proj?.colors[3]} as CSSProperties }></div>
           </div>
         </div>
       </div>)
