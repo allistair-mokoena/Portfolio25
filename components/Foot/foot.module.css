@@ -1,0 +1,119 @@
+.OuterCont{
+    display: flex;
+    flex-direction: row;
+    width: 95vw;
+    height: 1.6vw;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 1vw;
+    left: 2.5vw;
+}
+
+.Pannel{
+    background-color: var(--foreground);
+    height: 100%;
+    border-radius: 2.5px;
+}
+
+.Pannel:hover{
+    background-color: var(--accent1);
+    transition: 200ms ease-in;
+    height: 80%;
+}
+.LeftCont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: 25vw;
+    height: 100%;
+}
+
+.rightCont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    width: 20vw;
+    height: 100%;
+    font: 400 1em var(--font-saira), sans-serif;
+    transition: 0.2s ease-in-out;
+}
+
+.rightCont:hover .line{
+    width: 50px;
+    
+}
+.line{
+    height: 2px;
+    width: 30px;
+    background-color: var(--accent1);
+    transition: 1.2s ease-in-out;
+    animation-name: lineGrow;
+    animation-duration: 1.1s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+.footTitle{
+    font: 400 1.9em var(--font-saira), sans-serif;
+}
+
+.pannelsCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 8px;
+    width: 60%;
+    height: 100%;
+    animation-name: grow;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+    transition: 0.2s ease-in-out;
+}
+.LeftCont:hover .pannelsCont{
+    gap: 10px;
+}
+@keyframes grow {
+    from {
+        gap: 0px;
+    }
+    to {
+        gap: 15px;
+    }
+    
+}
+
+@keyframes lineGrow {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 30px;
+    }
+}
+
+@media only screen and (max-width: 1020px) {
+    .rightCont{
+        display: none;
+    }
+    .LeftCont{
+        width: 100%;
+    }
+    .footTitle{
+        font-size: 1.4em;
+    }
+    .pannelsCont{
+        gap: 2vw;
+    }
+    .LeftCont:hover .pannelsCont{
+        gap: 2.1;
+    }
+    .OuterCont{
+        bottom: 0vh;
+        padding: 10px;
+        background-color: var(--background);
+        height: 5vh;
+    }
+}
